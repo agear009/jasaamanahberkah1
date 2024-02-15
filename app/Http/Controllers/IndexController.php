@@ -7,7 +7,7 @@ use App\Models\categoryproduct;
 use App\Models\product;
 use App\Models\image;
 use App\Models\About;
-use App\Models\Post;
+
 
 use Illuminate\Http\Request;
 
@@ -18,7 +18,7 @@ class IndexController extends Controller
 
 
         $Abouts = About::all();
-        //$Posts = Post::all();
+
         return view('index.index',["title"=>"home","active"=>"index"],compact('Abouts'));
     }
     public function show(string $id)

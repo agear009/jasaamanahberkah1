@@ -20,7 +20,7 @@
                                     <thead>
                                         <td class="">Code</td>
                                         <td class="">Name</td>
-                                        <td class="">Name Order</td>
+                                        <td class="">Name Order / Code</td>
                                         <td class="">Process</td>
                                         <td class="">Kendala</td>
                                         <td class=""></td>
@@ -32,28 +32,83 @@
 
                                                 <td class="text-left" width="15%">{{ $tracker->code }}</td>
                                                 <td class="text-left" width="10%">{{ $tracker->name }}</td>
+                                                @if( $tracker->jasa_name=="")
+                                                <td class="text-left" width="15%">{{ $tracker->name_order }}</td>
+                                                @else
                                                 <td class="text-left" width="15%">{{ $tracker->jasa_name }}</td>
+                                                @endif
+
 
                                                 @if($tracker->status1=='Process')
-                                                <td class="text-left">{{ $tracker->jasa_process1 }}</td>
+                                                    @if( $tracker->jasa_process1=="")
+                                                            <td class="text-left" width="15%">{{ $tracker->status1 }} 1</td>
+                                                        @else
+                                                            <td class="text-left">{{ $tracker->jasa_process1 }}</td>
+                                                    @endif
+
+
                                                 @elseif($tracker->status2=='Process')
-                                                <td class="text-left">{{ $tracker->jasa_process2 }}</td>
+                                                    @if( $tracker->jasa_process2=="")
+                                                            <td class="text-left" width="15%">{{ $tracker->status2 }} 2</td>
+                                                        @else
+                                                            <td class="text-left">{{ $tracker->jasa_process2 }}</td>
+                                                    @endif
+
                                                 @elseif($tracker->status3=='Process')
-                                                <td class="text-left">{{ $tracker->jasa_process3 }}</td>
+                                                    @if( $tracker->jasa_process3=="")
+                                                        <td class="text-left" width="15%">{{ $tracker->status3 }} 3</td>
+                                                    @else
+                                                        <td class="text-left">{{ $tracker->jasa_process3 }}</td>
+                                                    @endif
+
                                                 @elseif($tracker->status4=='Process')
-                                                <td class="text-left">{{ $tracker->jasa_process4 }}</td>
+                                                    @if( $tracker->jasa_process4=="")
+                                                        <td class="text-left" width="15%">{{ $tracker->status4 }} 4</td>
+                                                    @else
+                                                        <td class="text-left">{{ $tracker->jasa_process4 }}</td>
+                                                    @endif
+
                                                 @elseif($tracker->status5=='Process')
-                                                <td class="text-left">{{ $tracker->jasa_process5 }}</td>
+                                                    @if( $tracker->jasa_process5=="")
+                                                        <td class="text-left" width="15%">{{ $tracker->status5 }} 5</td>
+                                                    @else
+                                                        <td class="text-left">{{ $tracker->jasa_process5 }}</td>
+                                                    @endif
+
                                                 @elseif($tracker->status6=='Process')
-                                                <td class="text-left">{{ $tracker->jasa_process6 }}</td>
+                                                    @if( $tracker->jasa_process6=="")
+                                                        <td class="text-left" width="15%">{{ $tracker->status6 }} 6</td>
+                                                    @else
+                                                        <td class="text-left">{{ $tracker->jasa_process6 }}</td>
+                                                    @endif
+
                                                 @elseif($tracker->status7=='Process')
-                                                <td class="text-left">{{ $tracker->jasa_process7 }}</td>
+                                                    @if( $tracker->jasa_process7=="")
+                                                        <td class="text-left" width="15%">{{ $tracker->status7 }} 7</td>
+                                                    @else
+                                                        <td class="text-left">{{ $tracker->jasa_process7 }} 7</td>
+                                                    @endif
+
                                                 @elseif($tracker->status8=='Process')
-                                                <td class="text-left">{{ $tracker->jasa_process8 }}</td>
+                                                    @if( $tracker->jasa_process8=="")
+                                                        <td class="text-left" width="15%">{{ $tracker->status8 }} 8</td>
+                                                    @else
+                                                        <td class="text-left">{{ $tracker->jasa_process7 }}</td>
+                                                    @endif
+
                                                 @elseif($tracker->status9=='Process')
-                                                <td class="text-left">{{ $tracker->jasa_process9 }}</td>
+                                                    @if( $tracker->jasa_process9=="")
+                                                        <td class="text-left" width="15%">{{ $tracker->status9 }} 9</td>
+                                                    @else
+                                                        <td class="text-left">{{ $tracker->jasa_process9 }}</td>
+                                                    @endif
+
                                                 @elseif($tracker->status10=='Process')
-                                                <td class="text-left">{{ $tracker->jasa_process10 }}</td>
+                                                    @if( $tracker->jasa_process10=="")
+                                                        <td class="text-left" width="15%">{{ $tracker->status10 }} 10</td>
+                                                    @else
+                                                        <td class="text-left">{{ $tracker->jasa_process10 }}</td>
+                                                    @endif
 
 
                                                 @else

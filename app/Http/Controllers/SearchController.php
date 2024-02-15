@@ -2,7 +2,6 @@
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-use Illuminate\View\View;
 use App\Models\tracker;
 use App\Models\jasa;
 
@@ -15,22 +14,30 @@ class SearchController extends Controller
 
                             {
 
-                            $tracker=tracker::latest();
 
 
                             if (request('search')) {
 
                                 $tracker=tracker::where('code','=',request('search'))->get();
+
+
+
+                               var_dump($tracker);
+                               exit;
                                 return view('index.detail',["title"=>"Search","active"=>"index"],compact('tracker'));
                                 }
 
                             else{
+                                $tracker=tracker::latest();
+                                return view('index.detail',["title"=>"Search","active"=>"index"],compact('tracker'));
 
                                 }
+
+                                    $tracker=tracker::latest();
                                     //dd($tracker);
                                     return view('index.detail',["title"=>"Search","active"=>"index"],compact('tracker'));
 
-                                }
+                            }
 
 
 

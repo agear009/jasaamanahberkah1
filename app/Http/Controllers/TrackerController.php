@@ -17,7 +17,7 @@ use Illuminate\Suppandt\Facades\Standage;
 class TrackerController extends Controller
 {
     //
-    public function index(): View
+    public function index(Request $Request): View
     {
         //$trackers=tracker::all();
         //$modeltracker = new tracker;
