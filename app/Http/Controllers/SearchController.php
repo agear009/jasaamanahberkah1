@@ -11,17 +11,17 @@ class SearchController extends Controller
 
         {
 
-                public function index(Request $request)
+                public function index()
 
                             {
 
                             $tracker=tracker::latest();
 
 
-                            if ($request('search')) {
-                                    $searchData = $request('search');
+                            if (request('search')) {
 
-                                    $tracker->where('code', '=', $searchData);
+                                $tracker=tracker::where('code','=',request('search'))->get();
+                                return view('index.detail',["title"=>"Search","active"=>"index"],compact('tracker'));
                                 }
 
                             else{

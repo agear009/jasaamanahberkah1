@@ -9,7 +9,7 @@
                 <div class="card border-0 shadow-sm rounded">
                     <div class="card-body">
                         <a href="{{ route('trackers.create') }}" class="btn btn-md btn-success mb-3">Insert Trackers</a>
-                        <form class="d-flex" role="search" action="/trackers" >
+                        <form class="d-flex" role="search" action="/trackers" method="get">
                             <div class="input-group mb-3">
                             <input class="form-control me-2" name="search" type="search" placeholder="Search" aria-label="Search" value="{{ request('search') }}">
                             <button class="btn btn-outline-success" type="submit">Search</button>

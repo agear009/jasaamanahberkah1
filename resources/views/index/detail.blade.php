@@ -1,4 +1,4 @@
-{{--
+
 @extends('Layouts.MainIndex')
 @section('Container')
 
@@ -244,5 +244,3 @@
         </div>
 
     @endsection
-
-  --}}

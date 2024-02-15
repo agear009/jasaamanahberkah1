@@ -14,7 +14,7 @@ use App\Models\About;
 Route::get('/', function () {
 
             $Abouts = About::all();
-            return view('index.index',["title"=>"home","active"=>"index"],compact('Categoryproducts','Products','Abouts','Categorys','Posts'));
+            return view('index.index',["title"=>"home","active"=>"index"],compact('Abouts'));
         })->name('login')->middleware('guest');
 
 Route::get('/logingiganfive', function () {
@@ -32,6 +32,7 @@ Route::post('/loginusercek',  [LoginUserController::class,'autenticate']);
 Route::post('/logout',  [LoginController::class,'logout']);
 Route::post('/logoutuser',  [LoginUserController::class,'logout']);
 Route::resource('/register',\App\Http\Controllers\UserController::class);
+Route::resource('/searchs', \App\Http\Controllers\SearchController::class);
 
 
 
@@ -40,7 +41,6 @@ Route::resource('/abouts', \App\Http\Controllers\AboutController::class);
 Route::resource('/dashboardindexs', \App\Http\Controllers\DashboardIndexController::class);
 Route::get('/dashboard',  [DashboardController::class,'index']);
 Route::resource('/jasas', \App\Http\Controllers\JasaController::class);
-Route::resource('/searchs', \App\Http\Controllers\SearchController::class);
 Route::resource('/trackers', \App\Http\Controllers\TrackerController::class);
 Route::resource('/users',\App\Http\Controllers\UserAdminController::class);
 

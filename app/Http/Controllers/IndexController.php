@@ -15,29 +15,15 @@ class IndexController extends Controller
 {
     //
     public function index(){
-        $modelPost = new Post;
-        $Posts=$modelPost->getListPost();
-        $Countries=country::all();
-        $Categoryproducts = categoryproduct::all();
-        $Categorys = category::all();
-        $Products = product::all();
+
+
         $Abouts = About::all();
         //$Posts = Post::all();
-        return view('index.index',["title"=>"home","active"=>"index",'Countries'=>$Countries],compact('Categoryproducts','Products','Abouts','Categorys','Posts'));
+        return view('index.index',["title"=>"home","active"=>"index"],compact('Abouts'));
     }
     public function show(string $id)
     {
-       //$product=product::findOrFail($id);
-       // $product=product::findOrFail($id)->get();
-       //tambah ->get(); untuk error bool $Products=product::findOrFail($id)
 
-        //dd($id);
-        $modelproductById = new product;
-        $product=$modelproductById->getListproductsById($id)->get(0);
-
-
-       // var_dump($product);
-        //exit;
         return view('index.detail',["title"=>"Detail","active"=>"Detail"],compact('product'));
 
 

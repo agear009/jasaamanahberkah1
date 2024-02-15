@@ -32,7 +32,8 @@ class TrackerController extends Controller
 
         if(request('search')){
 
-            $tracker=tracker::where('code','=',request('search'));
+            $trackers=tracker::where('code','=',request('search'))->get();
+
             return view('trackers.index',["title"=>"tracker",'active'=>'tracker'],compact('trackers'));
         }
         else{

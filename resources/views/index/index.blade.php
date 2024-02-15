@@ -27,7 +27,7 @@
                             <p class="display-5 fw-bolder text-white mb-2">TRACKER</p>
                             <div class="d-grid gap-3 d-sm-flex justify-content-sm-center mt-8">
 
-                                    <form class="d-flex" role="search" action="/trackers" method="get">
+                                    <form class="d-flex" role="search" action="/searchs" method="get">
                                         <div class="input-group mb-3">
                                         <input class="form-control me-2" name="search" type="search" placeholder="Search" aria-label="Search" value="{{ request('search') }}">
                                         <button class="btn btn-outline-success" type="submit">Search</button>
