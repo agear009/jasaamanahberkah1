@@ -3,26 +3,16 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\DashboardController;
-use App\Http\Controllers\DashboardIndexController;
-use App\Http\Controllers\LoginuserController;
-use Illuminate\Support\Facades\Auth;
 
-use App\Models\country;
-use App\Models\category;
-use App\Models\categoryproduct;
-use App\Models\product;
+use App\Http\Controllers\LoginuserController;
+
 use App\Models\About;
-use App\Models\Post;
+
 
 
 
 Route::get('/', function () {
-            $modelPost = new Post;
-            $Posts=$modelPost->getListPost();
-            $Countries=country::all();
-            $Categoryproducts = categoryproduct::all();
-            $Categorys = category::all();
-            $Products = product::all();
+
             $Abouts = About::all();
             return view('index.index',["title"=>"home","active"=>"index"],compact('Categoryproducts','Products','Abouts','Categorys','Posts'));
         })->name('login')->middleware('guest');
@@ -47,20 +37,10 @@ Route::resource('/register',\App\Http\Controllers\UserController::class);
 
 Route::group(["middleware"=>["auth"]],function(){
 Route::resource('/abouts', \App\Http\Controllers\AboutController::class);
-Route::resource('/countrys', \App\Http\Controllers\CountryController::class);
-Route::resource('/categorys', \App\Http\Controllers\CategoryController::class);
-Route::resource('/categoryproducts', \App\Http\Controllers\CategoryProductController::class);
 Route::resource('/dashboardindexs', \App\Http\Controllers\DashboardIndexController::class);
 Route::get('/dashboard',  [DashboardController::class,'index']);
-Route::resource('/imageproducts', \App\Http\Controllers\ImageController::class);
-Route::resource('/posts', \App\Http\Controllers\PostController::class);
 Route::resource('/jasas', \App\Http\Controllers\JasaController::class);
-Route::resource('/members', \App\Http\Controllers\MemberController::class);
-Route::resource('/products', \App\Http\Controllers\ProductController::class);
-Route::resource('/shippingcosts', \App\Http\Controllers\ShippingcostController::class);
-Route::resource('/shoppingcarts', \App\Http\Controllers\ShoppingCartController::class);
 Route::resource('/searchs', \App\Http\Controllers\SearchController::class);
-
 Route::resource('/trackers', \App\Http\Controllers\TrackerController::class);
 Route::resource('/users',\App\Http\Controllers\UserAdminController::class);
 
