@@ -10,7 +10,7 @@ class SearchController extends Controller
 
         {
 
-                public function index()
+                public function index(request $request)
 
                             {
 
@@ -18,8 +18,8 @@ class SearchController extends Controller
 
                             if (request('search')) {
 
-                                $tracker=tracker::where('code','=',request('search'))->get();
-
+                               // $tracker=tracker::where('code','=',request('search'))->get();
+                               $tracker=tracker::where('code','LIKE','%'.request('search').'%')->get('code');
 
 
                                var_dump($tracker);
@@ -29,7 +29,8 @@ class SearchController extends Controller
 
                             else{
                                 $tracker=tracker::latest();
-                                return view('index.detail',["title"=>"Search","active"=>"index"],compact('tracker'));
+                                return view('index.index',["title"=>"Search","active"=>"index"],compact('tracker'));
+
 
                                 }
 

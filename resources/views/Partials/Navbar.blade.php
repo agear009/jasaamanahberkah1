@@ -14,6 +14,10 @@
         <ul class="navbar-nav">
 
             <li class="nav-item">
+                <a class="nav-link {{ ($active==="User")?'active':'' }}" href="{{ route('users.index') }}">User</a>
+              </li>
+
+            <li class="nav-item">
                 <a class="nav-link {{ ($active==="Jasa")?'active':'' }}" href="{{ route('jasas.index') }}">Jasa</a>
               </li>
             <li class="nav-item">

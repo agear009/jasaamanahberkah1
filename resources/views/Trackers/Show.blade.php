@@ -190,9 +190,17 @@
 
                                 </td>
                                 <td>
-                                    <div class="form-group"><label for="w3review"></label>
-                                        <p>{{ $tracker->constraint }}</p>
-                                    </div>
+                                    @if($tracker->constraint=="-")
+                                        <div class="form-group"><label for="w3review"></label>
+                                            <p>{{ $tracker->constraint }}</p>
+                                        </div>
+
+                                    @else
+                                        <div class="form-group"><label for="w3review"></label>
+                                            <p>{{ $tracker->constraint }}</p>
+                                        </div>
+                                    @endif
+
                                 </td>
 
                             </tr>

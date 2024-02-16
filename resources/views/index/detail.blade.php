@@ -2,9 +2,15 @@
 @extends('Layouts.MainIndex')
 @section('Container')
 
+@if ($tracker=="")
+{
+    return view('index.detail',["title"=>"Search","active"=>"index"],compact('tracker'));
 
+}
 
-        <!-- Responsive navbar-->
+@else{
+
+    <!-- Responsive navbar-->
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container px-5">
                 <a class="navbar-brand" href="#!">Tracker</a>
@@ -242,5 +248,12 @@
                 </div>
             </div>
         </div>
+
+}
+
+@endif
+
+
+
 
     @endsection
