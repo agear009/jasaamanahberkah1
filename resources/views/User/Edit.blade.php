@@ -18,13 +18,25 @@
                             @method('PUT')
 
 
-           <div class="form-floating">
 
-             <input type="hidden" class="form-control @error('level') is-invalid @enderror" id="floatingLevel"  placeholder="1122@gG" name="level" value="{{ $user->level }}"  required>
-           </div>
            <div class="form-floating">
             <input type="text" class="form-control @error('name') is-invalid @enderror" id="floatingInput"  placeholder="Andy" name="name" value="{{ $user->name }}" required>
              <label for="floatingInput">Name</label>
+             <!-- error message untukname -->
+             @error('name')
+                 <div class="alert alert-danger mt-2">
+                     {{ $message }}
+                 </div>
+             @enderror
+           </div>
+           <div class="form-floating">
+            <select class="form-control @error('name') is-invalid @enderror" id="floatingInput"  placeholder="Andy" name="level" value="{{ $user->level }}" required>
+             <label for="floatingselect">User Level</label>
+             <option name='level' value="{{ $user->level }}">{{ $user->level }}</option>
+             <option name='level' value="">--Pilih di bawah ini untuk level--</option>
+             <option name='level' value="user">User</option>
+             <option name='level' value="superadmin">Super Admin</option>
+            </select>
              <!-- error message untukname -->
              @error('name')
                  <div class="alert alert-danger mt-2">

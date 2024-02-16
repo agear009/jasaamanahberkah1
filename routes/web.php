@@ -17,7 +17,7 @@ Route::get('/', function () {
             return view('index.index',["title"=>"home","active"=>"index"],compact('Abouts'));
         })->name('login')->middleware('guest');
 
-Route::get('/logingiganfive', function () {
+Route::get('/login-jasa-amanah', function () {
             return view('login.index',["title"=>"home","active"=>"index"]);
         })->name('login')->middleware('guest');
 

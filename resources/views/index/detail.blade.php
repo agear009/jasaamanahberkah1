@@ -2,13 +2,6 @@
 @extends('Layouts.MainIndex')
 @section('Container')
 
-@if ($tracker=="")
-{
-    return view('index.detail',["title"=>"Search","active"=>"index"],compact('tracker'));
-
-}
-
-@else{
 
     <!-- Responsive navbar-->
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -55,7 +48,7 @@
                             <div class="table-responsive table-condensed">
                             <table class="table">
                                 <tr>
-                                    <td>
+                                    <td width="35%">
                                         <div class="form-group">
 
                                             <label class="font-weight-bold">Code</label>
@@ -63,7 +56,7 @@
 
                                         </div>
                                     </td>
-                                    <td>
+                                    <td width="65%">
                                         <div class="form-group">
                                             <label class="font-weight-bold">Name</label>
                                             <p>{{ $tracker->name }}</p>
@@ -99,7 +92,6 @@
                                         </div>
                                     </td>
                                 </tr>
-                                </tr>
                                 <tr>
                                     <td>
                                         <div class="form-group">
@@ -112,7 +104,6 @@
 
                                         </div>
                                     </td>
-                                </tr>
                                 </tr>
                                 <tr>
                                     <td>
@@ -127,7 +118,6 @@
                                         </div>
                                     </td>
                                 </tr>
-                                </tr>
                                 <tr>
                                     <td>
                                         <div class="form-group">
@@ -140,7 +130,6 @@
 
                                         </div>
                                     </td>
-                                </tr>
                                 </tr>
                                 <tr>
                                     <td>
@@ -155,7 +144,6 @@
                                         </div>
                                     </td>
                                 </tr>
-                                </tr>
                                 <tr>
                                     <td>
                                         <div class="form-group">
@@ -168,7 +156,6 @@
 
                                         </div>
                                     </td>
-                                </tr>
                                 </tr>
                                 <tr>
                                     <td>
@@ -183,7 +170,6 @@
                                         </div>
                                     </td>
                                 </tr>
-                                </tr>
                                 <tr>
                                     <td>
                                         <div class="form-group">
@@ -196,7 +182,6 @@
 
                                         </div>
                                     </td>
-                                </tr>
                                 </tr>
                                 <tr>
                                     <td>
@@ -211,7 +196,7 @@
                                         </div>
                                     </td>
                                 </tr>
-                                </tr>
+
                                 <tr>
                                     <td>
                                         <div class="form-group">
@@ -226,20 +211,17 @@
                                     </td>
                                 </tr>
 
-                                <tr>
-                                    <td width="50%">
-                                        <div class="form-group"><label for="w3review"></label>
-                                            <p>{{ $tracker->constraint }}</p>
-                                        </div>
-
-
-                                    </td>
-                                    <td>
-                                        <div class="form-group"><label for="w3review"></label>
-                                            <p>{{ $tracker->constraint }}</p>
+                                <tr
+                                    @if ($tracker->constraint=="-")
+                                        bgcolor=""
+                                    @else
+                                        bgcolor="orange"
+                                    @endif>
+                                    <td width="" colspan="2"  >
+                                        <div class="form-group" text-align-top><label for="w3review"></label>
+                                            <p align="center"><b>{{ $tracker->constraint }}</b></p>
                                         </div>
                                     </td>
-
                                 </tr>
                             </table>
                             </div>
@@ -249,9 +231,6 @@
             </div>
         </div>
 
-}
-
-@endif
 
 
 

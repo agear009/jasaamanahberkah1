@@ -18,12 +18,15 @@ class SearchController extends Controller
 
                             if (request('search')) {
 
-                               // $tracker=tracker::where('code','=',request('search'))->get();
-                               $tracker=tracker::where('code','LIKE','%'.request('search').'%')->get('code');
+                                $tracker=tracker::where('code','=',request('search'))->get();
+                               //$tracker=tracker::where('code','LIKE','%'.request('search').'%')->get('code');
 
 
-                               var_dump($tracker);
-                               exit;
+                               //var_dump($tracker);
+                               //exit;
+                               $modelTracker = new tracker;
+                               $tracker=$modelTracker->getListtrackersBySearch(request('search'));
+                               $tracker=$tracker[0];
                                 return view('index.detail',["title"=>"Search","active"=>"index"],compact('tracker'));
                                 }
 

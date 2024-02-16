@@ -28,7 +28,12 @@
                                     </thead>
                                     <tbody>
                                     @forelse ($trackers as $tracker)
-                                        <tr>
+                                        <tr
+                                        @if ($tracker->constraint=="-")
+                                            bgcolor=""
+                                        @else
+                                            bgcolor="pink"
+                                        @endif>
 
                                                 <td class="text-left" width="15%">{{ $tracker->code }}</td>
                                                 <td class="text-left" width="10%">{{ $tracker->name }}</td>

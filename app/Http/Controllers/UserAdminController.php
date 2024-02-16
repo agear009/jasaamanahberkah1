@@ -78,7 +78,7 @@ class UserAdminController extends Controller
 
         $this->validate($request,[
 
-            'level' =>'|max:255',
+            'level' =>'required|max:255',
             'name' =>'required|min:2|max:255',
             'email'=>'required',
             'password'=>'required|min:1|max:20'

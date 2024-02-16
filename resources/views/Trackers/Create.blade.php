@@ -14,7 +14,7 @@
                             <div class="form-group">
 
                                 <label class="font-weight-bold">Code</label>
-                                <input type="text" class="form-control @error('cost') is-invalid @enderror" name="code" value="{{ $code}}" placeholder="insert code" required>
+                                <input type="readonly" class="form-control @error('cost') is-invalid @enderror" name="code" value="{{ $code}}" placeholder="insert code" required>
 
                                 <!-- error message untuk title -->
                                 @error('name')
